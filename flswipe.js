@@ -1,4 +1,5 @@
 // when document is fully loaded
+//test update
 $(document).ready(function() {
     $('.map-s').hide();
     var target = $(".footer-flex-container").get(0);
