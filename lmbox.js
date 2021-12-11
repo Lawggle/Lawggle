@@ -220,8 +220,8 @@ map.addControl(new mapboxgl.NavigationControl());
                 if (prop.image) {
                     link.innerHTML = '<div class="i-wrap"><img src="' + prop.image + '" class="l-profile"></div>';
                 }
-            /*  link.innerHTML += '<a href="profile?profile=' + prop.mid + '" target="_blank" class="blue l-profile-link"><h4>' + prop.name + ' ' + prop.lastname + '</h4></a>';*/
-                  link.innerHTML += '<a href="legal-professionals/' +prop.name + '-' + prop.lastname + '" target="_blank" class="blue l-profile-link"><h4>' + prop.name + ' ' + prop.lastname + '</h4></a>';
+             link.innerHTML += '<a href="profile?profile=' + prop.mid + '" target="_blank" class="blue l-profile-link"><h4>' + prop.name + ' ' + prop.lastname + '</h4></a>';
+                 
 		    if (prop.firm) {
                     link.innerHTML += '<h5>' + prop.firm + '<h5>';
                 }
