@@ -31,6 +31,7 @@ $(document).ready(function() {
                     stop = "normal";
                 }
 
+                
                 smid = $(this).find('span.p-mid').text();
                 $(this).click(function(e) {
                     e.preventDefault();
