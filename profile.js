@@ -101,48 +101,49 @@
          html += '<h2 class="contact-heading new">'+ 'Contact Details' + '&#58' + '</h2>';
          html += '<div class="contact-block">';
         }
-           html += '<ul role="list" class="list w-clearfix w-list-unstyled">';                    
+          html += '<ul role="list" class="list w-clearfix w-list-unstyled">';                    
            html += '<li class="list-item">';  
            if (value["Public Phone"]) {
            html += '<a href="' + value["Public Phone"] + '" class="contact-links" target="_blank"><img src="https://uploads-ssl.webflow.com/5e5dd661bbf5f1863333707a/61b793a8bfa7cec02e24a2cf_tel_icon.svg" alt="" class="contact-image">' + value["Public Phone"] + '</a>';
            }
-           html += '</li>';                  
-           html += '<li class="list-item">';
-           html += '<ul role="list" class="list w-clearfix w-list-unstyled">';                    
+           html += '</li>';                                     
            html += '<li class="list-item">';  
-           if (value["Public Phone"]) {
-           html += '<a href="' + value["Public Phone"] + '" class="contact-links" target="_blank"><img src="https://uploads-ssl.webflow.com/5e5dd661bbf5f1863333707a/61b793a8bfa7cec02e24a2cf_tel_icon.svg" alt="" class="contact-image">' + value["Public Phone"] + '</a>';
+           if (value["Public Email"]) {
+           html += '<a href="' + value["Public Email"] + '" class="contact-links" target="_blank"><img src="https://uploads-ssl.webflow.com/5e5dd661bbf5f1863333707a/61b793a8bfa7cec02e24a2cf_email_icon.svg" alt="" class="contact-image">' + value["Public Email"] + '</a>';
            }
            html += '</li>';                  
            html += '<li class="list-item">';
-           
+           if (value["Public Email"]) {
+           html += '<a href="' + value.Url + '" class="contact-links" target="_blank"><img src="https://uploads-ssl.webflow.com/5e5dd661bbf5f1863333707a/61b793a8bfa7cec02e24a2cf_web_icon.svg" alt="" class="contact-image">' + value.Url + '</a>';
+           }
+           html += '</li>'; 
+          html += '</ul>';  
          html += '</div>';
         html += '</div>';
       html += '<div class="contact-button-wrap">';
-      html += '<button id="talk" type="button" class="button talk">contact me&#33</button>';
+       html += '<button id="talk" type="button" class="button talk">contact me&#33</button>';
       html += '</div>';
       html += '<div class="links-block">';  
-      html += '<ul role="list" class="list w-clearfix w-list-unstyled">';                    
-      html += '<li class="list-item">';  
+       html += '<ul role="list" class="list w-clearfix w-list-unstyled">';                    
+        html += '<li class="list-item">';  
         if (value.Twitter) {
-      html += '<a href="' + value.Twitter + '" class="social-block" target="_blank"><img src="https://uploads-ssl.webflow.com/5e5dd661bbf5f1863333707a/5ff60355c347a0de7ee9767f_twitter1.svg" alt="" class="social-icon"></a>';
-      }
-      html += '</li>';                  
-      html += '<li class="list-item">'; 
+        html += '<a href="' + value.Twitter + '" class="social-block" target="_blank"><img src="https://uploads-ssl.webflow.com/5e5dd661bbf5f1863333707a/5ff60355c347a0de7ee9767f_twitter1.svg" alt="" class="social-icon"></a>';
+        }
+        html += '</li>';                  
+        html += '<li class="list-item">'; 
         if (value.Facebook) {
-      html += '<a href="' + value.Facebook + '" class="social-block" target="_blank"><img src="https://uploads-ssl.webflow.com/5e5dd661bbf5f1863333707a/5ff60373c2c2b851a8f9368c_facebook1.svg" alt="" class="social-icon"></a>';
-      }
-      html += '</li>';                  
-      html += '<li class="list-item">'; 
+        html += '<a href="' + value.Facebook + '" class="social-block" target="_blank"><img src="https://uploads-ssl.webflow.com/5e5dd661bbf5f1863333707a/5ff60373c2c2b851a8f9368c_facebook1.svg" alt="" class="social-icon"></a>';
+        }
+        html += '</li>';                  
+        html += '<li class="list-item">'; 
         if (value.Linkedin) {
-      html += '<a href="' + value.Linkedin + '" class="social-block" target="_blank"><img src="https://uploads-ssl.webflow.com/5e5dd661bbf5f1863333707a/5ff6038b5e4963165877455b_linkedin1.svg" alt="" class="social-icon"></a>';
-      }
-      html += '<li class="list-item">'; 
+        html += '<a href="' + value.Linkedin + '" class="social-block" target="_blank"><img src="https://uploads-ssl.webflow.com/5e5dd661bbf5f1863333707a/5ff6038b5e4963165877455b_linkedin1.svg" alt="" class="social-icon"></a>';
+        }
+        html += '<li class="list-item">'; 
         if (value.Instagram) {
-      html += '<a href="' + value.Instagram + '" class="social-block" target="_blank"><img src="https://uploads-ssl.webflow.com/5e5dd661bbf5f1863333707a/615f3768d91e4184e98914bc_instagram1.svg" alt="" class="social-icon"></a>';
-      }
-      html += '</li>';                      
-      html += '</ul>';
+        html += '<a href="' + value.Instagram + '" class="social-block" target="_blank"><img src="https://uploads-ssl.webflow.com/5e5dd661bbf5f1863333707a/615f3768d91e4184e98914bc_instagram1.svg" alt="" class="social-icon"></a>';
+        }
+        html += '</li>';                      
+       html += '</ul>';
       html += '</div>';
-      
-      html += '</div>';
+     html += '</div>';
