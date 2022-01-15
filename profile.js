@@ -1,5 +1,4 @@
-<script>
-    
+   
   var getUrlParameter = function getUrlParameter(sParam) {
     var sPageURL = window.location.search.substring(1),
         sURLVariables = sPageURL.split('&'),
@@ -262,7 +261,6 @@ MemberStack.onReady.then(function(member) {
 
 });
 
-</script>
 
 
       
