@@ -1,3 +1,48 @@
+<script>
+    
+  var getUrlParameter = function getUrlParameter(sParam) {
+    var sPageURL = window.location.search.substring(1),
+        sURLVariables = sPageURL.split('&'),
+        sParameterName,
+        i;
+
+    for (i = 0; i < sURLVariables.length; i++) {
+        sParameterName = sURLVariables[i].split('=');
+
+        if (sParameterName[0] === sParam) {
+          return sParameterName[1] === undefined ? true : decodeURIComponent(sParameterName[1]);
+        }
+    }
+};
+
+
+
+var profile = getUrlParameter('profile');
+
+
+
+var url = "https://sheet.best/api/sheets/c537b30c-6a62-49e9-bbb7-913b076eee99/MID/" + profile;
+
+$.ajax({ url: url, success: successFunc });
+
+
+console.log(profile);
+
+function successFunc(data) {
+  console.log(data);
+  $('.loading').fadeOut();
+ var html = '';
+        $.each(data, function(key, value){
+         if (value.Photo) {
+     $('.pfimage').html('<img src="' + value.Photo +'">');
+      }
+        
+        
+   $("h1.heading-17").text(value["First Name"] + ' ' + value["Last Name"]);
+    $("#Pro-Name").val(value["First Name"] + ' ' + value["Last Name"]);
+    $("#Pro-Email").val(value["Email"]); 
+            
+            
     html += '<div class="profile-top">';
        html += '<div class="pro-card">';
         html += '<div class="profile-pic">';
@@ -109,12 +154,12 @@
            html += '</li>';                                     
            html += '<li class="list-item">';  
            if (value["Public Email"]) {
-           html += '<a href="' + value["Public Email"] + '" class="contact-links" target="_blank"><img src="https://uploads-ssl.webflow.com/5e5dd661bbf5f1863333707a/61b793a8bfa7cec02e24a2cf_email_icon.svg" alt="" class="contact-image">' + value["Public Email"] + '</a>';
+           html += '<a href="' + value["Public Email"] + '" class="contact-links" target="_blank"><img src="https://uploads-ssl.webflow.com/5e5dd661bbf5f1863333707a/61b793a8d66025152d9a2e90_email_icon.svg" alt="" class="contact-image">' + value["Public Email"] + '</a>';
            }
            html += '</li>';                  
            html += '<li class="list-item">';
            if (value["Public Email"]) {
-           html += '<a href="' + value.Url + '" class="contact-links" target="_blank"><img src="https://uploads-ssl.webflow.com/5e5dd661bbf5f1863333707a/61b793a8bfa7cec02e24a2cf_web_icon.svg" alt="" class="contact-image">' + value.Url + '</a>';
+           html += '<a href="' + value.Url + '" class="contact-links" target="_blank"><img src="https://uploads-ssl.webflow.com/5e5dd661bbf5f1863333707a/61b793a84e478f18f64e2fb4_web_icon.svg" alt="" class="contact-image">' + value.Url + '</a>';
            }
            html += '</li>'; 
           html += '</ul>';  
@@ -147,3 +192,78 @@
        html += '</ul>';
       html += '</div>';
      html += '</div>';
+
+                 
+           
+       // Initialize and add the map
+function initMap() {
+  // The location of Uluru
+   var address = value.Address;
+
+   var map = new google.maps.Map(document.getElementById('map'), { 
+       mapTypeId: google.maps.MapTypeId.TERRAIN,
+       zoom: 15
+   });
+
+   var geocoder = new google.maps.Geocoder();
+
+   geocoder.geocode({
+      'address': address
+   }, 
+   function(results, status) {
+      if(status == google.maps.GeocoderStatus.OK) {
+      var marker = new google.maps.Marker({
+            position: results[0].geometry.location,
+            map: map
+         });
+         map.setCenter(results[0].geometry.location);
+         infowindow.open(map, marker);
+         marker.addListener('click', function() {
+    infowindow.open(map, marker);
+  });
+      }
+   });
+      
+      var contentString = '<div id="content">'+
+      '<div id="siteNotice">'+
+      '</div>'+
+      '<div id="bodyContent">'+
+      '<h4>' + value["First Name"] + ' '+ value["Last Name"] + '<h4>'+
+      '<h5>' + value.Firm + '<h5>'+
+      '<p>' + value.Address + '</p>'+
+      '</div>'+
+      '</div>';
+
+  var infowindow = new google.maps.InfoWindow({
+    content: contentString
+  });
+ 
+}
+initMap(); 
+        });
+    $('#profileWrap').html(html);    
+ $('#contactMe').click(function(){
+$(".talk-modal").addClass("active");
+});
+ $('#talk').click(function(){
+$(".talk-modal").addClass("active");
+});
+ $('#seeMore').click(function(){
+ $('html,body').animate({
+        scrollTop: $("#moreDetails").offset().top},
+        'slow');
+});
+ $(".close-wrapper").click(function(){
+$(".talk-modal").removeClass("active");
+});
+}
+  
+MemberStack.onReady.then(function(member) {
+
+});
+
+</script>
+
+
+      
+            
