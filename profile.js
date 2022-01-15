@@ -151,16 +151,7 @@ function successFunc(data) {
            html += '<a href="' + value["Public Phone"] + '" class="contact-links" target="_blank"><img src="https://uploads-ssl.webflow.com/5e5dd661bbf5f1863333707a/61b793a8bfa7cec02e24a2cf_tel_icon.svg" alt="" class="contact-image">' + value["Public Phone"] + '</a>';
            }
            html += '</li>';                                     
-           html += '<li class="list-item">';  
-           if (value["Public Email"]) {
-           html += '<a href="' + value["Public Email"] + '" class="contact-links" target="_blank"><img src="https://uploads-ssl.webflow.com/5e5dd661bbf5f1863333707a/61b793a8d66025152d9a2e90_email_icon.svg" alt="" class="contact-image">' + value["Public Email"] + '</a>';
-           }
-           html += '</li>';                  
-           html += '<li class="list-item">';
-           if (value["Public Email"]) {
-           html += '<a href="' + value.Url + '" class="contact-links" target="_blank"><img src="https://uploads-ssl.webflow.com/5e5dd661bbf5f1863333707a/61b793a84e478f18f64e2fb4_web_icon.svg" alt="" class="contact-image">' + value.Url + '</a>';
-           }
-           html += '</li>'; 
+         
           html += '</ul>';  
          html += '</div>';
         html += '</div>';
