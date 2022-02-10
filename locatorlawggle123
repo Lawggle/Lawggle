@@ -1,4 +1,6 @@
- $(function() {
+//Making github pages work
+
+$(function() {
     $('.loading').fadeOut();
 });
 expert = [];
